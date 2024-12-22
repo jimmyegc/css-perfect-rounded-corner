@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;  
+}
+
+.box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #444;
+  border-radius: 50px;
+  border: 3px solid #6aff70;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  inset: 15px;
+  background-color: #333;
+  border-radius: calc(50px - 15px);
+  border: 3px solid #ff3a2c;  
+  /* inner-radius = outer-radius (border-radius) - padding (inset) */
+}
