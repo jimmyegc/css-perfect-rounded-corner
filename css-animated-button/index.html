@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#">Hover Me</a>
+  <a href="#">Click Here</a>
+  <a href="#">Awesome</a>
+  <script>
+    document.querySelectorAll('a').forEach(link => {
+      link.innerHTML = link.innerText.split('').map((letter, i) => {
+        if(letter === ' ') {
+          return ' ';
+        } else {
+          return `<span style="transition-delay: ${i * 50}ms">${letter}</span>`;
+        }
+    }).join('');
+    }); 
+  </script>
+</body>
+</html>
